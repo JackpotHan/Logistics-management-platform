@@ -1,5 +1,6 @@
 package com.xiaohan.core.entity.take_delivery;
 
+import com.xiaohan.base.BaseObject;
 import lombok.*;
 
 import javax.persistence.Column;
@@ -16,7 +17,7 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class WayBill{
+public class WayBill extends BaseObject {
     @Id
     @Column(name = "C_ID")
     private Integer id;

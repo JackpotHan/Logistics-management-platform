@@ -1,5 +1,6 @@
 package com.xiaohan.core.entity.transit;
 
+import com.xiaohan.base.BaseObject;
 import lombok.*;
 
 import javax.persistence.Column;
@@ -15,7 +16,7 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class TransitInfo {
+public class TransitInfo extends BaseObject {
     @Id
     @Column(name = "C_ID")
     private Integer id;

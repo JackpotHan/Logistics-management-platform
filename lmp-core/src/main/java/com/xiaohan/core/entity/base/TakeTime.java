@@ -1,5 +1,6 @@
 package com.xiaohan.core.entity.base;
 
+import com.xiaohan.base.BaseObject;
 import lombok.*;
 
 import java.util.Date;
@@ -21,7 +22,7 @@ import javax.persistence.TemporalType;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class TakeTime {
+public class TakeTime extends BaseObject {
 	@Id
 	@Column(name = "C_ID")
 	private Integer id; // 主键

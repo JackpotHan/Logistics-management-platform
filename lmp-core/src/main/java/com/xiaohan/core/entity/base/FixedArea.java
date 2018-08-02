@@ -1,5 +1,6 @@
 package com.xiaohan.core.entity.base;
 
+import com.xiaohan.base.BaseObject;
 import lombok.*;
 
 import javax.persistence.*;
@@ -14,7 +15,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class FixedArea {
+public class FixedArea extends BaseObject {
 
     @Id
     @Column(name = "C_ID")

@@ -1,22 +1,15 @@
 package com.xiaohan.core.entity.base;
 
+import com.xiaohan.base.BaseObject;
 import lombok.*;
 
+import javax.persistence.*;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 /**
- * @description:档案类，记录所有的分类信息，在子档中
+ * @Author: Hanjt
+ * @Date: 2018/8/2 10:33
+ * @Description: 档案类，记录所有的分类信息，在子档中
  */
 @Table(name = "T_ARCHIVE")
 @Getter
@@ -24,7 +17,7 @@ import javax.persistence.TemporalType;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Archive {
+public class Archive extends BaseObject {
 	@Id
 	@GeneratedValue
 	@Column(name = "C_ID")

@@ -1,5 +1,6 @@
 package com.xiaohan.core.entity.take_delivery;
 
+import com.xiaohan.base.BaseObject;
 import lombok.*;
 
 import javax.persistence.*;
@@ -14,7 +15,7 @@ import java.util.Date;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class WorkBill {
+public class WorkBill extends BaseObject {
     @Id
     @GeneratedValue
     @Column(name = "C_ID")

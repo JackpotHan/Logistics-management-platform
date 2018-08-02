@@ -1,6 +1,8 @@
 package com.xiaohan.core.entity.base;
 
 import javax.persistence.*;
+
+import com.xiaohan.base.BaseObject;
 import lombok.*;
 
 /**
@@ -12,7 +14,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Courier {
+public class Courier extends BaseObject {
 
     @Id
     @Column(name = "C_ID")

@@ -1,4 +1,4 @@
-package com.xiaohan.base;
+package com.xiaohan;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

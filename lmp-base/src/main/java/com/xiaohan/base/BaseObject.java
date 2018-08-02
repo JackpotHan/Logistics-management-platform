@@ -1,6 +1,6 @@
 package com.xiaohan.base;
 
-
+import com.alibaba.fastjson.JSON;
 import java.io.Serializable;
 
 /**
@@ -10,8 +10,8 @@ import java.io.Serializable;
  */
 public class BaseObject implements Serializable {
 
-//    @Override
-//    public String toString() {
-//        return JSON.toJSONString(this);
-//    }
+    @Override
+    public String toString() {
+        return JSON.toJSONString(this);
+    }
 }

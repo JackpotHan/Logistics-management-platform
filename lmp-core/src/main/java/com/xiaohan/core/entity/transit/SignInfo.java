@@ -1,5 +1,6 @@
 package com.xiaohan.core.entity.transit;
 
+import com.xiaohan.base.BaseObject;
 import lombok.*;
 
 import javax.persistence.Column;
@@ -16,7 +17,7 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class SignInfo {
+public class SignInfo extends BaseObject {
     @Id
     @Column(name = "C_ID")
     private Integer id;

@@ -1,5 +1,6 @@
 package com.xiaohan.core.entity.transit;
 
+import com.xiaohan.base.BaseObject;
 import lombok.*;
 
 import javax.persistence.Column;
@@ -17,7 +18,7 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class DeliveryInfo {
+public class DeliveryInfo extends BaseObject {
 
     @Id
     @Column(name = "C_ID")

@@ -1,5 +1,6 @@
 package com.xiaohan.core.entity.system;
 
+import com.xiaohan.base.BaseObject;
 import lombok.*;
 
 import javax.persistence.Column;
@@ -15,7 +16,7 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Permission{
+public class Permission extends BaseObject {
 
     @Id
     @Column(name = "C_ID")

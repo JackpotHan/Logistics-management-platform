@@ -1,5 +1,6 @@
 package com.xiaohan.core.entity.system;
 
+import com.xiaohan.base.BaseObject;
 import lombok.*;
 
 import javax.persistence.Column;
@@ -16,7 +17,7 @@ import java.io.Serializable;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Role implements Serializable {
+public class Role extends BaseObject {
     @Id
     @Column(name = "C_ID")
     private int id;

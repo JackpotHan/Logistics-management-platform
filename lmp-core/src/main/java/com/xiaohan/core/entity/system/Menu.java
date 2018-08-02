@@ -1,5 +1,6 @@
 package com.xiaohan.core.entity.system;
 
+import com.xiaohan.base.BaseObject;
 import lombok.*;
 
 import javax.persistence.*;
@@ -15,7 +16,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Menu {
+public class Menu extends BaseObject {
     @Id
     @Column(name = "C_ID")
     private int id;

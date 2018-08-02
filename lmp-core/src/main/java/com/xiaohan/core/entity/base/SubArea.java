@@ -1,5 +1,6 @@
 package com.xiaohan.core.entity.base;
 
+import com.xiaohan.base.BaseObject;
 import lombok.*;
 
 import javax.persistence.Column;
@@ -18,7 +19,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class SubArea {
+public class SubArea extends BaseObject {
 
     @Id
     @Column(name = "C_ID")

@@ -1,5 +1,6 @@
 package com.xiaohan.core.entity.take_delivery;
 
+import com.xiaohan.base.BaseObject;
 import lombok.*;
 
 import javax.persistence.Column;
@@ -19,7 +20,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Order {
+public class Order extends BaseObject {
     @Id
     @Column(name = "C_ID")
     private Integer id;// 主键

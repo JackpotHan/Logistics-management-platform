@@ -16,11 +16,11 @@
     <packaging>pom</packaging>
 
     <modules>
-    <module>lmp-base</module>
-    <module>lmp-management</module>
-    <module>lmp-web</module>
-    <module>lmp-core</module>
-    <module>lmp-mq</module>
+        <module>lmp-base</module>
+        <module>lmp-management</module>
+        <module>lmp-web</module>
+        <module>lmp-core</module>
+        <module>lmp-mq</module>
     </modules>
 
 
