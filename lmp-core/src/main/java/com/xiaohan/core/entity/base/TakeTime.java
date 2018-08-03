@@ -1,5 +1,6 @@
 package com.xiaohan.core.entity.base;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.xiaohan.base.BaseObject;
 import lombok.*;
 
@@ -16,7 +17,7 @@ import javax.persistence.TemporalType;
 /**
  * @description:收派时间管理
  */
-@Table(name = "T_TAKE_TIME")
+@Table(schema = "`lmp-base`",name = "t_take_time")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -24,31 +25,42 @@ import javax.persistence.TemporalType;
 @Builder
 public class TakeTime extends BaseObject {
 	@Id
-	@Column(name = "C_ID")
+	@Column(name = "id")
 	private Integer id; // 主键
-	@Column(name = "C_NAME")
+
+	@Column(name = "name")
 	private String name; // 收派时间名称
-	@Column(name = "C_NORMAL_WORK_TIME")
-	private String normalWorkTime; // 平常上班时间
-	@Column(name = "C_NORMAL_DUTY_TIME")
-	private String normalDutyTime; // 平常下班时间
-	@Column(name = "C_SAT_WORK_TIME")
-	private String satWorkTime; // 周六上班时间
-	@Column(name = "C_SAT_DUTY_TIME")
-	private String satDutyTime; // 周六下班时间
-	@Column(name = "C_SUN_WORK_TIME")
-	private String sunWorkTime; // 周日上班时间
-	@Column(name = "C_SUN_DUTY_TIME")
-	private String sunDutyTime; // 周日下班时间
-	@Column(name = "C_STATUS")
-	private String status; // 状态
-	@Column(name = "C_COMPANY")
+
+	@Column(name = "gmt_weekday_on")
+	@JsonFormat(pattern = "HH:mm:ss",timezone = "GMT+8")
+	private Date gmtWeekdayOn; // 正常上班时间
+
+	@Column(name = "gmt_weekday_off")
+	@JsonFormat(pattern = "HH:mm:ss",timezone = "GMT+8")
+	private Date gmtWeekdayOff; // 正常下班时间
+
+	@Column(name = "gmt_weekend_on")
+	@JsonFormat(pattern = "HH:mm:ss",timezone = "GMT+8")
+	private Date gmtWeekendOn; // 周末上班时间
+
+	@Column(name = "gmt_weekend_off")
+	@JsonFormat(pattern = "HH:mm:ss",timezone = "GMT+8")
+	private Date gmtWeekendOff; // 周末下班时间
+
+	@Column(name = "status")
+	private Integer status; // 状态
+
+	@Column(name = "company")
 	private String company; // 所属公司
-	@Column(name = "C_OPERATING_TIME")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date operatingTime;// 操作时间
-	@Column(name = "C_OPERATOR")
+
+	@Column(name = "gmt_operate")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+	private Date gmtOperate;// 操作时间
+
+	@Column(name = "operator")
 	private String operator; // 操作员
-	@Column(name = "C_OPERATING_COMPANY")
-	private String operatingCompany; // 操作单位
+
+	@Column(name = "operate_company")
+	private String operateCompany; // 操作单位
+
 }

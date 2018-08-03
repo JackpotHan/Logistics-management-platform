@@ -1,5 +1,6 @@
 package com.xiaohan.core.entity.base;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.xiaohan.base.BaseObject;
 import lombok.*;
 
@@ -20,7 +21,7 @@ import javax.persistence.TemporalType;
  * @description:收派标准
  */
 
-@Table(name = "T_STANDARD")
+@Table(schema = "`lmp-base`",name = "t_standard")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -28,24 +29,32 @@ import javax.persistence.TemporalType;
 @Builder
 public class Standard extends BaseObject {
     @Id
-    @Column(name = "C_ID")
-    private Integer id; // 主键
-    @Column(name = "C_NAME")
-    private String name; // 标准名称
-    @Column(name = "C_MIN_WEIGHT")
-    private Integer minWeight; // 最小重量
-    @Column(name = "C_MAX_WEIGHT")
-    private Integer maxWeight; // 最大重量
-    @Column(name = "C_MIN_LENGTH")
-    private Integer minLength; // 最小长度
-    @Column(name = "C_MAX_LENGTH")
-    private Integer maxLength; // 最大重量
-    @Column(name = "C_OPERATING_TIME")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date operatingTime;// 操作时间
-    @Column(name = "C_OPERATOR")
+    @Column(name = "id")
+    private Long id; // 主键
+
+    @Column(name = "standard_name")
+    private String standardName; // 标准名称
+
+    @Column(name = "min_weight")
+    private Double minWeight; // 最小重量
+
+    @Column(name = "max_weight")
+    private Double maxWeight; // 最大重量
+
+    @Column(name = "min_length")
+    private Double minLength; // 最小长度
+
+    @Column(name = "max_length")
+    private Double maxLength; // 最大长度
+
+    @Column(name = "gmt_operate")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date gmtOperate;// 操作时间
+
+    @Column(name = "operator")
     private String operator; // 操作员
-    @Column(name = "C_OPERATING_COMPANY")
-    private String operatingCompany; // 操作单位
+
+    @Column(name = "operate_company")
+    private String operateCompany; // 操作单位
 
 }

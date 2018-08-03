@@ -1,5 +1,6 @@
 package com.xiaohan.core.entity.base;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.xiaohan.base.BaseObject;
 import lombok.*;
 
@@ -19,7 +20,7 @@ import javax.persistence.TemporalType;
  * @description:子档案类，记录了档案分级后的子信息
  */
 @Entity
-@Table(name = "T_SUB_ARCHIVE")
+@Table(schema = "`lmp-base`",name = "t_sub_archive")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -27,21 +28,28 @@ import javax.persistence.TemporalType;
 @Builder
 public class SubArchive extends BaseObject {
 	@Id
-	@Column(name = "C_ID")
-	private Integer id; // 主键
-	@Column(name = "C_SUB_ARCHIVE_NAME")
+	@Column(name = "id")
+	private Long id; // 主键
+
+	@Column(name = "sub_archive_name")
 	private String subArchiveName; // 子档名称
-	@Column(name = "C_MNEMONIC_CODE")
+
+	@Column(name = "mnemonic_code")
 	private String mnemonicCode; // 助记码
-	@Column(name = "C_REMARK")
+
+	@Column(name = "remark")
 	private String remark; // 备注
-	@Column(name = "C_MOTHBALLED")
-	private Character mothballed; // 封存标志
-	@Column(name = "C_OPERATING_TIME")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date operatingTime;// 操作时间
-	@Column(name = "C_OPERATOR")
+
+	@Column(name = "mothballed")
+	private Integer mothballed; // 封存标志
+
+	@Column(name = "gmt_operate")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+	private Date gmtOperate;// 操作时间
+
+	@Column(name = "operator")
 	private String operator; // 操作员
-	@Column(name = "C_OPERATING_COMPANY")
-	private String operatingCompany; // 操作单位
+
+	@Column(name = "operate_company")
+	private String operateCompany; // 操作单位
 }

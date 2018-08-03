@@ -6,26 +6,57 @@ import lombok.*;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Date;
 
-/**
- * @description:权限名称
- */
-@Table(name = "T_PERMISSION")
+@Table(schema = "`system`",name = "t_permission")
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 public class Permission extends BaseObject {
+	@Id
+	@Column(name = "id")
+	private Integer id;//
 
-    @Id
-    @Column(name = "C_ID")
-    private int id;
-    @Column(name = "C_NAME")
-    private String name; // 权限名称
-    @Column(name = "C_KEYWORD")
-    private String keyword; // 权限关键字，用于权限控制
-    @Column(name = "C_DESCRIPTION")
-    private String description; // 描述
+	@Column(name = "name")
+	private String name;//权限名称
+
+	@Column(name = "value")
+	private String value;//权限值
+
+	@Column(name = "path")
+	private String path;//对应方法路径
+
+	@Column(name = "type")
+	private Integer type;//0通用权限1菜单控制权限2系统功能控制权限
+
+	@Column(name = "level")
+	private Integer level;//权限等级0普通1重要
+
+	@Column(name = "status")
+	private Integer status;//0正常1停用
+
+	@Column(name = "category")
+	private String category;//类别
+
+	@Column(name = "description")
+	private String description;//描述
+
+	@Column(name = "gmt_operate")
+	private Date gmtOperate;//创建时间
+
+	@Column(name = "operator")
+	private String operator;//创建人
+
+	@Column(name = "parent_id")
+	private Integer parentId;//上级权限 菜单控制权限有效
+
+	@Column(name = "menu_path")
+	private String menuPath;//菜单路径 菜单控制权限有效
+
+	@Column(name = "menu_icon")
+	private String menuIcon;//菜单图标 菜单控制权限时候有效
 
 }
+

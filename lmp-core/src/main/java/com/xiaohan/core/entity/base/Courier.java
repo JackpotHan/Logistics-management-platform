@@ -8,7 +8,7 @@ import lombok.*;
 /**
  * @description:快递员
  */
-@Table(name = "T_COURIER")
+@Table(schema = "`lmp-base`",name = "t_courier")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -17,27 +17,37 @@ import lombok.*;
 public class Courier extends BaseObject {
 
     @Id
-    @Column(name = "C_ID")
-    private Integer id; // 主键
-    @Column(name = "C_COURIER_NUM", unique = true)
-    private String courierNum; // 快递员工号
-    @Column(name = "C_NAME")
-    private String name; // 快递员姓名
-    @Column(name = "C_TELEPHONE")
-    private String telephone; // 快递员联系电话
-    @Column(name = "C_PDA")
+    @Column(name = "id")
+    private Long id; // 主键
+
+    @Column(name = "courier_no")
+    private String courierNo; // 快递员工号
+
+    @Column(name = "courier_name")
+    private String courierName; // 快递员姓名
+
+    @Column(name = "courier_mobile")
+    private String courierMobile; // 快递员联系电话
+
+    @Column(name = "pda")
     private String pda; // PDA号
-    @Column(name = "C_DELTAG")
-    private Character deltag; // 作废标志 1 为标记作废
-    @Column(name = "C_CHECK_PWD")
+
+    @Column(name = "deltag")
+    private Integer deltag; // 作废标志 1 为标记作废
+
+    @Column(name = "check_pwd")
     private String checkPwd; // 查台密码
-    @Column(name = "C_TYPE")
-    private String type; // 取件员类型
-    @Column(name = "C_COMPANY")
+
+    @Column(name = "type")
+    private Integer type; // 取件员类型
+
+    @Column(name = "company")
     private String company; // 单位
-    @Column(name = "C_VEHICLE_TYPE")
-    private String vehicleType; // 车辆类型
-    @Column(name = "C_VEHICLE_NUM")
-    private String vehicleNum; // 车牌号
+
+    @Column(name = "vehicle_type")
+    private Integer vehicleType; // 车辆类型
+
+    @Column(name = "vehicle_no")
+    private String vehicleNo; // 车牌号
 
 }

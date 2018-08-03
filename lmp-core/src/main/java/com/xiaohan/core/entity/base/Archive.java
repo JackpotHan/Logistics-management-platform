@@ -1,5 +1,6 @@
 package com.xiaohan.core.entity.base;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.xiaohan.base.BaseObject;
 import lombok.*;
 
@@ -11,7 +12,7 @@ import java.util.Date;
  * @Date: 2018/8/2 10:33
  * @Description: 档案类，记录所有的分类信息，在子档中
  */
-@Table(name = "T_ARCHIVE")
+@Table(schema = "`lmp-base`",name = "t_archive")
 @Getter
 @Setter
 @Builder
@@ -19,23 +20,29 @@ import java.util.Date;
 @NoArgsConstructor
 public class Archive extends BaseObject {
 	@Id
-	@GeneratedValue
-	@Column(name = "C_ID")
-	private Integer id; // 主键
-	@Column(name = "C_ARCHIVE_NUM", unique = true )
-	private String archiveNum;// 档案编号
-	@Column(name = "C_ARCHIVE_NAME")
+	@Column(name = "id")
+	private Long id; // 主键
+
+	@Column(name = "archive_no")
+	private String archiveNo;// 档案编号
+
+	@Column(name = "archive_name")
 	private String archiveName; // 档案名称
-	@Column(name = "C_REMARK")
+
+	@Column(name = "remark")
 	private String remark; // 备注
-	@Column(name = "C_HASCHILD")
+
+	@Column(name = "has_child")
 	private Integer hasChild;// 是否分级 0代表不分级 1代表分级
-	@Column(name = "C_OPERATING_TIME")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date operatingTime;// 操作时间
-	@Column(name = "C_OPERATOR")
+
+	@Column(name = "gmt_operate")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+	private Date gmtOperate;// 操作时间
+
+	@Column(name = "operator")
 	private String operator; // 操作员
-	@Column(name = "C_OPERATING_COMPANY")
-	private String operatingCompany; // 操作单位
+
+	@Column(name = "operate_company")
+	private String operateCompany; // 操作单位
 
 }

@@ -1,5 +1,6 @@
 package com.xiaohan.core.entity.base;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.xiaohan.base.BaseObject;
 import lombok.*;
 
@@ -9,7 +10,7 @@ import java.util.Date;
 /**
  * @description:定区
  */
-@Table(name = "T_FIXED_AREA")
+@Table(schema = "`lmp-base`",name = "t_fixed_area")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -18,23 +19,33 @@ import java.util.Date;
 public class FixedArea extends BaseObject {
 
     @Id
-    @Column(name = "C_ID")
-    private String id; // 主键
-    @Column(name = "C_FIXED_AREA_NAME", unique = true)
+    @Column(name = "id")
+    private Long id; // 主键
+
+    @Column(name = "fixed_area_no")
+    private  String fixedAreaNo; //定区编号
+
+    @Column(name = "fixed_area_name")
     private String fixedAreaName; // 定区名称
-    @Column(name = "C_FIXED_AREA_LEADER", unique = true)
+
+    @Column(name = "fixed_area_leader")
     private String fixedAreaLeader;// 定区负责人
-    @Column(name = "C_TELEPHONE")
-    private String telephone;// 联系电话
-    @Column(name = "C_COMPANY")
+
+    @Column(name = "mobile")
+    private String mobile;// 联系电话
+
+    @Column(name = "company")
     private String company; // 所属单位
-    @Column(name = "C_OPERATING_TIME")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date operatingTime;// 操作时间
-    @Column(name = "C_OPERATOR")
+
+    @Column(name = "gmt_operate")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date gmtOperate;// 操作时间
+
+    @Column(name = "operator")
     private String operator; // 操作员
-    @Column(name = "C_OPERATING_COMPANY")
-    private String operatingCompany; // 操作单位
+
+    @Column(name = "operate_company")
+    private String operateCompany; // 操作单位
 
 
 }

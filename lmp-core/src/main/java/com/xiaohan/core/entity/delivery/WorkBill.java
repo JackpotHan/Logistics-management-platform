@@ -1,4 +1,4 @@
-package com.xiaohan.core.entity.take_delivery;
+package com.xiaohan.core.entity.delivery;
 
 import com.xiaohan.base.BaseObject;
 import lombok.*;
@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * @description:工单
  */
-@Table(name = "T_WORK_BILL")
+@Table(schema = "`delivery`",name = "t_work_bill")
 @Getter
 @Setter
 @Builder
@@ -17,26 +17,32 @@ import java.util.Date;
 @AllArgsConstructor
 public class WorkBill extends BaseObject {
     @Id
-    @GeneratedValue
-    @Column(name = "C_ID")
+    @Column(name = "id")
     private Integer id; // 主键
-    @Column(name = "C_TYPE")
-    private String type; // 工单类型 新,追,销
+
+    @Column(name = "type")
+    private Integer type; // 工单类型 新,追,销
+
     /*
      * 新单:没有确认货物状态的 已通知:自动下单下发短信 已确认:接到短信,回复收信确认信息 已取件:已经取件成功,发回确认信息 生成工作单 已取消:销单
      * 
      */
-    @Column(name = "C_PICKSTATE")
-    private String pickstate; // 取件状态
-    @Column(name = "C_BUILDTIME")
-    private Date buildtime; // 工单生成时间
-    @Column(name = "C_ATTACHBILLTIMES")
-    private Integer attachbilltimes; // 追单次数
-    @Column(name = "C_REMARK")
+    @Column(name = "pick_state")
+    private Integer pickState; // 取件状态
+
+    @Column(name = "gmt_create")
+    private Date gmtCreate; // 工单生成时间
+
+    @Column(name = "attach_bill_times")
+    private Integer attachBillTimes; // 追单次数
+
+    @Column(name = "remark")
     private String remark; // 订单备注
-    @Column(name = "C_SMSNUMBER")
+
+    @Column(name = "sms_number")
     private String smsNumber; // 短信序号
-    @JoinColumn(name = "C_ORDER_ID")
-    private Order order; // 订单
+
+    @Column(name = "order_no")
+    private String orderNo; // 订单号
 
 }

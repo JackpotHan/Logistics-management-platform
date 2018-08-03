@@ -10,7 +10,7 @@ import javax.persistence.Table;
 /**
  * @description: 运输配送信息
  */
-@Table(name = "T_TRANSIT_INFO")
+@Table(schema = "`lmp-transit", name = "t_transit_info")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -18,14 +18,14 @@ import javax.persistence.Table;
 @Builder
 public class TransitInfo extends BaseObject {
     @Id
-    @Column(name = "C_ID")
-    private Integer id;
+    @Column(name = "id")
+    private Long id;
 
-    @Column(name = "C_STATUS")
+    @Column(name = "status")
     // 出入库中转、到达网点、开始配置、正常签收、异常
     private String status;
 
-    @Column(name = "C_OUTLET_ADDRESS")
-    private String outletAddress;
+    @Column(name = "outlet_address")
+    private String outletAddress;   //发往地
 
 }

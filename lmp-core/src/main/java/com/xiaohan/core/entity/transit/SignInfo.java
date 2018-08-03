@@ -1,5 +1,6 @@
 package com.xiaohan.core.entity.transit;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.xiaohan.base.BaseObject;
 import lombok.*;
 
@@ -11,7 +12,7 @@ import java.util.Date;
 /**
  * @description: 签收信息
  */
-@Table(name = "T_SIGN_INFO")
+@Table(schema = "`lmp-transit",name = "t_sign_info")
 @Getter
 @Setter
 @Builder
@@ -19,22 +20,23 @@ import java.util.Date;
 @NoArgsConstructor
 public class SignInfo extends BaseObject {
     @Id
-    @Column(name = "C_ID")
-    private Integer id;
+    @Column(name = "id")
+    private Long id;
 
-    @Column(name = "C_SIGN_NAME")
+    @Column(name = "sign_name")
     private String signName;
 
-    @Column(name = "C_SIGN_TIME")
-    private Date signTime;
+    @Column(name = "gmt_sign")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date gmtSign;
 
-    @Column(name = "C_SIGN_TYPE")
-    private String signType;
+    @Column(name = "sign_type")
+    private Integer signType;
 
-    @Column(name = "C_ERROR_REMARK")
+    @Column(name = "error_remark")
     private String errorRemark;
 
-    @Column(name = "C_DESCRIPTION")
+    @Column(name = "description")
     private String description; // 描述
 
 }

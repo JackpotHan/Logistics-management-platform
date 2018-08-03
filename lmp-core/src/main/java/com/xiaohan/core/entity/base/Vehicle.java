@@ -10,7 +10,7 @@ import javax.persistence.Table;
 /**
  * @description:车辆
  */
-@Table(name = "T_VEHICLE")
+@Table(schema = "`lmp-base`",name = "t_vehicle")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -19,25 +19,34 @@ import javax.persistence.Table;
 public class Vehicle extends BaseObject {
 
 	@Id
-	@Column(name = "C_ID")
-	private Integer id;
-	@Column(name = "C_ROUTE_TYPE")
-	private String routeType; // 线路类型
-	@Column(name = "C_ROUTE_NAME")
+	@Column(name = "id")
+	private Long id;
+
+	@Column(name = "route_type")
+	private Integer routeType; // 线路类型  枚举暂定
+
+	@Column(name = "route_name")
 	private String routeName; // 线路名称
-	@Column(name = "C_SNIPPER")
+
+	@Column(name = "shipper")
 	private String shipper; // 承运商
-	@Column(name = "C_DRIVER")
+
+	@Column(name = "driver")
 	private String driver; // 司机
-	@Column(name = "C_VEHICLE_NUM")
-	private String vehicleNum; // 车牌号
-	@Column(name = "C_TELEPHONE")
-	private String telephone; // 电话
-	@Column(name = "C_VEHICLE_TYPE")
-	private String vehicleType;// 车型
-	@Column(name = "C_TON")
+
+	@Column(name = "vehicle_no")
+	private String vehicleNo; // 车牌号
+
+	@Column(name = "mobile")
+	private String mobile; // 电话
+
+	@Column(name = "vehicle_type")
+	private Integer vehicleType;// 车型  枚举暂定
+
+	@Column(name = "ton")
 	private Integer ton; // 吨控
-	@Column(name = "C_REMARK")
+
+	@Column(name = "remark")
 	private String remark;// 备注
 
 }

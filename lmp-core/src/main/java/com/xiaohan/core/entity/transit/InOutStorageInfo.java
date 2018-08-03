@@ -10,7 +10,7 @@ import javax.persistence.Table;
 /**
  * @description: 出入库信息
  */
-@Table(name = "T_IN_OUT_STORAGE_INFO")
+@Table(schema = "`lmp-transit",name = "t_in_out_storage_info")
 @Getter
 @Setter
 @Builder
@@ -18,16 +18,16 @@ import javax.persistence.Table;
 @NoArgsConstructor
 public class InOutStorageInfo extends BaseObject {
     @Id
-    @Column(name = "C_ID")
-    private Integer id;
+    @Column(name = "id")
+    private Long id;
 
-    @Column(name = "C_OPERATION")
-    private String operation; // 操作类型 ： 入库、出库、到达网点
+    @Column(name = "operation")
+    private Integer operation; // 操作类型 ： 入库、出库、到达网点
 
-    @Column(name = "C_ADDRESS")
-    private String Address; // 仓库、网点 地址
+    @Column(name = "address")
+    private String address; // 仓库、网点 地址
 
-    @Column(name = "C_DESCRIPTION")
+    @Column(name = "description")
     private String description; // 描述
 
 
