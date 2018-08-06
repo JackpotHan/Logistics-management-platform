@@ -13,7 +13,7 @@ import java.util.Date;
  * @description:订单实体类
  */
 
-@Table(schema = "`lmp-delivery`", name = "t_order")
+@Table(schema = "`lmp-delivery`",name = "t_order")
 @Getter
 @Setter
 @AllArgsConstructor

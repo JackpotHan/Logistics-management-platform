@@ -11,7 +11,7 @@ import javax.persistence.Table;
 /**
  * @description:运单实体类
  */
-@Table(schema = "`delivery`", name = "t_way_bill")
+@Table(schema = "`delivery`",name = "t_way_bill")
 @Getter
 @Setter
 @AllArgsConstructor

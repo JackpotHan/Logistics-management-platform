@@ -12,12 +12,12 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserPermission extends BaseObject {
-    @Id
-    @Column(name = "user_id")
-    private Integer userId;//用户ID
+	@Id
+	@Column(name = "user_id")
+	private Integer userId;//用户ID
 
-    @Column(name = "permission_id")
-    private Integer permissionId;//权限ID
+	@Column(name = "permission_id")
+	private Integer permissionId;//权限ID
 
 }
 

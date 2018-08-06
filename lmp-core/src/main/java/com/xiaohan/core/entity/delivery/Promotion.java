@@ -11,7 +11,7 @@ import java.util.Date;
 /**
  * @description:促销信息实体类
  */
-@Table(schema = "`order`", name = "t_promotion")
+@Table(schema = "`order`",name = "t_promotion")
 
 @Getter
 @Setter
@@ -49,7 +49,7 @@ public class Promotion extends BaseObject {
     private String updateCompany; // 更新单位
 
     @Column(name = "status")
-    private String status; // 状态 可取值：1.进行中(默认) 2. 已结束
+    private String status ; // 状态 可取值：1.进行中(默认) 2. 已结束
 
     @Column(name = "description")
     private String description; // 宣传内容(活动描述信息)
