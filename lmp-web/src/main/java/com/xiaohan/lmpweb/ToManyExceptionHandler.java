@@ -14,8 +14,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * create by hanjt
- * create at 20/11/2017
+ * @Author: Hanjt
+ * @Date: 2018/8/5 15:33
+ * @Description:
  */
 @ControllerAdvice
 public class ToManyExceptionHandler {
