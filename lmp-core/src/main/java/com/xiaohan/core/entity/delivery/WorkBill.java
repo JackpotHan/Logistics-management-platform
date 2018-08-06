@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * @description:工单
  */
-@Table(schema = "`delivery`",name = "t_work_bill")
+@Table(schema = "`delivery`", name = "t_work_bill")
 @Getter
 @Setter
 @Builder
@@ -25,7 +25,7 @@ public class WorkBill extends BaseObject {
 
     /*
      * 新单:没有确认货物状态的 已通知:自动下单下发短信 已确认:接到短信,回复收信确认信息 已取件:已经取件成功,发回确认信息 生成工作单 已取消:销单
-     * 
+     *
      */
     @Column(name = "pick_state")
     private Integer pickState; // 取件状态
