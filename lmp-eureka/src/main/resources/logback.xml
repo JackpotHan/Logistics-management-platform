@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
+    <contextName>eureka</contextName>
+    <!-- 控制台输出 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+            <pattern>%d{MM-dd HH:mm:ss:SSS} %-5p [%t] %replace(%caller{1}){'\t|Caller.{1}0|\r\n', ''} %msg%n</pattern>
+            　　　　　
+        </encoder>
+    </appender>
+    <!-- 按照每天生成日志文件 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--日志文件输出的文件名-->
+            <fileNamePattern>/Data/logs/eureka.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!--日志文件保留天数-->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{MM-dd HH:mm:ss:SSS} %-5p [%t] %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>

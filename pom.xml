@@ -15,14 +15,25 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Dalston.SR4</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <modules>
         <module>lmp-base</module>
         <module>lmp-management</module>
         <module>lmp-web</module>
         <module>lmp-core</module>
         <module>lmp-mq</module>
+        <module>lmp-eureka</module>
     </modules>
-
-
 
 </project>
