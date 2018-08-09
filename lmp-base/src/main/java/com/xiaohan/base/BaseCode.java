@@ -7,26 +7,35 @@ package com.xiaohan.base;
  */
 public class BaseCode extends BaseObject {
 
-    public static final BaseCode OK = new BaseCode("00", "操作成功");
-    public static final BaseCode FAIL = new BaseCode("09", "失败");
-    public static final BaseCode ERR = new BaseCode("10", "系统异常");
-    public static final BaseCode ERR_PARAM = new BaseCode("11", "参数异常");
-    public static final BaseCode DATA_ERR = new BaseCode("12","查询数据有异");
-    public static final BaseCode TIME_OUT = new BaseCode("99", "系统请求超时");
-    private String code;
+    public static final BaseCode OK = new BaseCode(00, "操作成功");
+    public static final BaseCode FAIL = new BaseCode(10, "失败");
+    public static final BaseCode ERR = new BaseCode(55, "系统异常");
+    public static final BaseCode ERR_PARAM = new BaseCode(11, "参数异常");
+    public static final BaseCode DATA_ERR = new BaseCode(12,"查询数据有异");
+    public static final BaseCode TIME_OUT = new BaseCode(99, "系统请求超时");
+
+    public static final BaseCode UNAUTHORIZED = new BaseCode(111, "未经授权");
+    public static final BaseCode UNAUTHENTICATED = new BaseCode(112, "未经身份验证");
+    public static final BaseCode CODE_ERROR = new BaseCode(113, "验证码错误");
+    public static final BaseCode ASSERT_ERROR = new BaseCode(114,"业务断言错误");
+    public static final BaseCode UNPERMISSION = new BaseCode(115, "系统未发现权限集合");
+    public static final BaseCode ACCOUNT_EXIST = new BaseCode(116, "账号已经存在");
+
+
+    private Integer code;
     private String desc;
 
     public BaseCode() {}
-    public BaseCode(String code, String desc) {
+    public BaseCode(Integer code, String desc) {
         this.code = code;
         this.desc = desc;
     }
 
-    public String getCode() {
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 

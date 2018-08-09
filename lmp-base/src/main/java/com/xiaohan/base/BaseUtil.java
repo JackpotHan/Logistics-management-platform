@@ -2,8 +2,6 @@ package com.xiaohan.base;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.xiaohan.base.BaseException;
-import com.xiaohan.base.BaseResult;
 
 import java.io.*;
 import java.util.Collection;

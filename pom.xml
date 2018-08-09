@@ -34,6 +34,7 @@
         <module>lmp-core</module>
         <module>lmp-mq</module>
         <module>lmp-eureka</module>
+        <module>lmp-system</module>
     </modules>
 
 </project>

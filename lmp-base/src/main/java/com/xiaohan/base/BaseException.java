@@ -6,13 +6,13 @@ package com.xiaohan.base;
  * @Description:
  */
 public class BaseException extends RuntimeException {
-    private String code;
+    private Integer code;
 
     public BaseException(BaseCode baseCode) {
         this(baseCode.getCode(), baseCode.getDesc());
     }
 
-    public BaseException(String code, String message) {
+    public BaseException(Integer code, String message) {
         super(message);
         this.code = code;
     }
@@ -22,7 +22,7 @@ public class BaseException extends RuntimeException {
         this.code = result.getRespCode();
     }
 
-    public BaseException(String code, String message, Object... args) {
+    public BaseException(Integer code, String message, Object... args) {
         super(String.format(message, args));
         this.code = code;
     }
@@ -31,11 +31,11 @@ public class BaseException extends RuntimeException {
         super(message, cause);
     }
 
-    public String getCode() {
+    public Integer getCode() {
         return this.code;
     }
 
-    public void setCode(String code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 }

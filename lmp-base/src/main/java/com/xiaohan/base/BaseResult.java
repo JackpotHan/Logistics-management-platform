@@ -1,13 +1,15 @@
 package com.xiaohan.base;
 
+import java.io.Serializable;
+
 /**
  * @Author: Hanjt
  * @Date: 2018/8/2 14:57
  * @Description:
  */
-public class BaseResult {
+public class BaseResult<T> implements Serializable {
 
-    private String respCode;//response code, use EmmetCode
+    private Integer respCode;//response code, use EmmetCode
     private String respDesc;//response desc
     private Object respData;//response java object
 
@@ -25,11 +27,11 @@ public class BaseResult {
         this(BaseCode.getCode(), BaseCode.getDesc(), respData);
     }
 
-    public BaseResult(String respCode, String respDesc) {
+    public BaseResult(Integer respCode, String respDesc) {
         this(respCode, respDesc, null);
     }
 
-    public BaseResult(String respCode, String respDesc, Object respData) {
+    public BaseResult(Integer respCode, String respDesc, Object respData) {
         this.respCode = respCode;
         this.respDesc = respDesc;
         this.respData = respData;
@@ -39,11 +41,11 @@ public class BaseResult {
         return BaseCode.OK.getCode().equals(this.getRespCode());
     }
 
-    public String getRespCode() {
+    public Integer getRespCode() {
         return respCode;
     }
 
-    public void setRespCode(String respCode) {
+    public void setRespCode(Integer respCode) {
         this.respCode = respCode;
     }
 
