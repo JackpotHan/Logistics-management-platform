@@ -41,6 +41,13 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.baomidou/mybatisplus-maven-plugin -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatisplus-maven-plugin</artifactId>
+            <version>1.0</version>
+        </dependency>
+
         <!--日期操作函数-->
         <dependency>
             <groupId>joda-time</groupId>

@@ -9,11 +9,14 @@ public class BaseCode extends BaseObject {
 
     public static final BaseCode OK = new BaseCode(00, "操作成功");
     public static final BaseCode FAIL = new BaseCode(10, "失败");
-    public static final BaseCode ERR = new BaseCode(55, "系统异常");
     public static final BaseCode ERR_PARAM = new BaseCode(11, "参数异常");
     public static final BaseCode DATA_ERR = new BaseCode(12,"查询数据有异");
-    public static final BaseCode TIME_OUT = new BaseCode(99, "系统请求超时");
+    public static final BaseCode ERR_DB = new BaseCode(13, "据库异常");
+    public static final BaseCode TOKEN_EXPIRED = new BaseCode(14, "系统token失效");
+    public static final BaseCode ERR_SIGN = new BaseCode(15, "系统验签异常");
 
+    public static final BaseCode ERR = new BaseCode(55, "系统异常");
+    public static final BaseCode TIME_OUT = new BaseCode(99, "系统请求超时");
     public static final BaseCode UNAUTHORIZED = new BaseCode(111, "未经授权");
     public static final BaseCode UNAUTHENTICATED = new BaseCode(112, "未经身份验证");
     public static final BaseCode CODE_ERROR = new BaseCode(113, "验证码错误");

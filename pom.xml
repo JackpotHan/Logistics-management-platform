@@ -35,6 +35,8 @@
         <module>lmp-mq</module>
         <module>lmp-eureka</module>
         <module>lmp-system</module>
+        <module>lmp-gateway</module>
+        <module>lmp-redis</module>
     </modules>
 
 </project>
