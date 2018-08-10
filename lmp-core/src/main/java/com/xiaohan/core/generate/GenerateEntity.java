@@ -19,7 +19,7 @@ public class GenerateEntity {
         sb.append("package ").append(entityPackage).append(";\r\n").append("\r\n");
 
         if (importDate) sb.append("import com.fasterxml.jackson.annotation.JsonFormat;\r\n");
-        sb.append("import com.zmkj.bms.base.ZmObject;\r\n");
+        sb.append("import com.xiaohan.base.BaseObject;\r\n");
         sb.append("import lombok.*;\r\n\r\n");
         sb.append("import javax.persistence.Id;\r\n");
         sb.append("import javax.persistence.Column;\r\n");
@@ -34,7 +34,7 @@ public class GenerateEntity {
         sb.append("@Builder\r\n");
         sb.append("@NoArgsConstructor\r\n");
         sb.append("@AllArgsConstructor\r\n");
-        sb.append("public class ").append(entityName).append(" extends ZmObject {\r\n");
+        sb.append("public class ").append(entityName).append(" extends BaseObject {\r\n");
         sb.append("\t@Id\r\n");
         for (int i = 0; i < colnames.size(); i++) {
             if (getType(colTypes.get(i)).equals("Date")) sb.append("\t@JsonFormat(pattern = \"yyyy-MM-dd HH:mm:ss\", timezone = \"GMT+8\")\r\n");
@@ -42,15 +42,6 @@ public class GenerateEntity {
             sb.append("\tprivate ").append(getType(colTypes.get(i))).append(" ").append(underline2Camel(colnames.get(i)))
                     .append(";//").append(colComment.get(i)).append("\r\n\r\n");
         }
-//        sb.append("\r\n");
-//        for (int i = 0; i < colnames.size(); i++) {
-//            String columnName = underline2Camel(colnames.get(i));
-//            sb.append("\tpublic void set").append(initcap(columnName)).append("(").append(getType(colTypes.get(i))).append(" ")
-//                    .append(columnName).append(") {\r\n").append("\t\tthis.").append(columnName).append(" = ").append(columnName)
-//                    .append(";\r\n").append("\t}\r\n");
-//            sb.append("\tpublic ").append(getType(colTypes.get(i))).append(" get").append(initcap(columnName)).append("() {\r\n")
-//                    .append("\t\treturn ").append(columnName).append(";\r\n").append("\t}\r\n");
-//        }
         sb.append("}\r\n");
         String content = sb.toString();
         System.out.println(content);

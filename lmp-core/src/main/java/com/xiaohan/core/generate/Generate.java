@@ -50,13 +50,6 @@ public class Generate {
 
     }
 
-
-  public static void main(String[] args)throws Exception {
-     String basePath = "D:\\IdeaProject\\Logistics-management-platform";
-     generate("192.168.8.51", "3306", "bms-order", "root", "zm#1123",
-             "t_trans_order_debts","TransOrderDebts", "com.zmkj.bms", basePath);
-    }
-
     public static void generateEntity(String host, String port, String database, String username, String password, String tableName, String entityName, String basePackage, String basePath) throws Exception {
         String entityPackage = basePackage + ".entity";
         String entityPath = basePath + "/entity/";
@@ -83,4 +76,11 @@ public class Generate {
         }
         if(conn!=null) conn.close();
     }
+
+    public static void main(String[] args)throws Exception {
+        String basePath = "D:\\IdeaProject\\Logistics-management-platform\\";
+        generate("localhost", "3306", "lmp-delivery", "root", "123456",
+                "t_order","Order", "com.xiaohan", basePath);
+    }
+
 }

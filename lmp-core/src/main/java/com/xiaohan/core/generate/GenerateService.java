@@ -16,7 +16,7 @@ public class GenerateService {
         StringBuffer sb = new StringBuffer();
         sb.append("package ").append(servicePackage).append(";\r\n").append("\r\n");
 
-        sb.append("import com.zmkj.bms.util.MapperUtil;\r\n");
+        sb.append("import com.xiaohan.web.utils.MapperUtil;\r\n");
         sb.append("import ").append(entityPackage).append(".").append(entityName).append(";\r\n\r\n");
         sb.append("import ").append(mapperPackage).append(".").append(entityName).append("Mapper;\r\n");
         sb.append("import org.springframework.stereotype.Service;\r\n");
