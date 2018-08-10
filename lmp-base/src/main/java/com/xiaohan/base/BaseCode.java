@@ -11,7 +11,7 @@ public class BaseCode extends BaseObject {
     public static final BaseCode FAIL = new BaseCode(10, "失败");
     public static final BaseCode ERR_PARAM = new BaseCode(11, "参数异常");
     public static final BaseCode DATA_ERR = new BaseCode(12,"查询数据有异");
-    public static final BaseCode ERR_DB = new BaseCode(13, "据库异常");
+    public static final BaseCode ERR_DB = new BaseCode(13, "数据库异常");
     public static final BaseCode TOKEN_EXPIRED = new BaseCode(14, "系统token失效");
     public static final BaseCode ERR_SIGN = new BaseCode(15, "系统验签异常");
 
