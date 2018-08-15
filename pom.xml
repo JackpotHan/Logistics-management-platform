@@ -37,6 +37,7 @@
         <module>lmp-system</module>
         <module>lmp-gateway</module>
         <module>lmp-redis</module>
+        <module>lmp-message</module>
     </modules>
 
 </project>
