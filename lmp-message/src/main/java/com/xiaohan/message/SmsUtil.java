@@ -56,7 +56,7 @@ public class SmsUtil {
         // 必填:待发送手机号
         request.setPhoneNumbers(telephone);
         // 必填:短信签名-可在短信控制台中找到
-        request.setSignName("速运快递");
+        request.setSignName("韩金涛");
         // 必填:短信模板-可在短信控制台中找到
         request.setTemplateCode("SMS_76455085");
         // 可选:模板中的变量替换JSON串,如模板内容为"亲爱的${name},您的验证码为${code}"时,此处的值为
@@ -90,7 +90,7 @@ public class SmsUtil {
         //组装请求对象
         QuerySendDetailsRequest request = new QuerySendDetailsRequest();
         //必填-号码
-        request.setPhoneNumber("15000000000");
+        request.setPhoneNumber("17671755129");
         //可选-流水号
         request.setBizId(bizId);
         //必填-发送日期 支持30天内记录查询，格式yyyyMMdd

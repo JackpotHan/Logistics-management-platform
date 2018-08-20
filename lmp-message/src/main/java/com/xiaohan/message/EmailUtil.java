@@ -42,4 +42,8 @@ public class EmailUtil {
             throw new RuntimeException("邮件发送失败...");
         }
     }
+
+    public static void main(String[] args) {
+        sendMail("测试","测试测试，收到请Q1","1599309975@qq.com");
+    }
 }
