@@ -1,19 +1,18 @@
 package com.xiaohan.message;
 
-import java.util.Properties;
-
 import javax.mail.Message;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMessage.RecipientType;
+import java.util.Properties;
 /**
  * @Author: Hanjt
  * @Date: 2018/8/15 15:24
  * @Description:
  */
-public class EmailUtil {
+public class MailUtil {
 
     private static String smtp_host = "smtp.163.com"; // 网易
     private static String username = "hjt950722@163.com"; // 邮箱账户
