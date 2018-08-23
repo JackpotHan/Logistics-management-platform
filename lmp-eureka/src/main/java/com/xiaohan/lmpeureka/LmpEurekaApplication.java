@@ -1,4 +1,4 @@
-package com.xiaohan.eureka;
+package com.xiaohan.lmpeureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

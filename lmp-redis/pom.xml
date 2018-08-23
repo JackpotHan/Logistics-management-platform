@@ -6,7 +6,7 @@
     <parent>
         <artifactId>Logistics-management-platform</artifactId>
         <groupId>com.xiaohan</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>lmp-redis</artifactId>
@@ -30,7 +30,7 @@
         <dependency>
             <groupId>com.xiaohan</groupId>
             <artifactId>lmp-core</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

@@ -6,7 +6,7 @@
     <parent>
         <artifactId>Logistics-management-platform</artifactId>
         <groupId>com.xiaohan</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>lmp-core</artifactId>
@@ -21,15 +21,15 @@
         <dependency>
             <groupId>com.xiaohan</groupId>
             <artifactId>lmp-base</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>javax.persistence</groupId>
@@ -87,6 +87,11 @@
             <artifactId>spring-test</artifactId>
             <version>5.0.8.RELEASE</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.google-collections</groupId>
+            <artifactId>google-collect</artifactId>
+            <version>snapshot-20080530</version>
         </dependency>
     </dependencies>
 
