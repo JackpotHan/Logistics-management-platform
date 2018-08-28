@@ -14,6 +14,5 @@ public class SimpleCacheManage {
     /**
      * 方法缓存路径
      */
-    public static Map<String, String> methodMap = Maps.newConcurrentMap();
-
+    public static Map<String, String> methodMap = Maps.newConcurrentHashMap();
 }
