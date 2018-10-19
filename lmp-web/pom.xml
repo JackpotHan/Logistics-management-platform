@@ -6,7 +6,7 @@
     <parent>
         <artifactId>Logistics-management-platform</artifactId>
         <groupId>com.xiaohan</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>lmp-web</artifactId>
@@ -21,7 +21,7 @@
         <dependency>
             <groupId>com.xiaohan</groupId>
             <artifactId>lmp-core</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
