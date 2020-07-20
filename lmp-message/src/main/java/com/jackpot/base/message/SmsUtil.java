@@ -56,7 +56,7 @@ public class SmsUtil {
         // 必填:待发送手机号
         request.setPhoneNumbers(telephone);
         // 必填:短信签名-可在短信控制台中找到
-        request.setSignName("韩金涛");
+        request.setSignName("yourName");
         // 必填:短信模板-可在短信控制台中找到
         request.setTemplateCode("yourTemplateCode");
         // 可选:模板中的变量替换JSON串,如模板内容为"亲爱的${name},您的验证码为${code}"时,此处的值为
@@ -98,7 +98,7 @@ public class SmsUtil {
         // 必填:待发送手机号
         request.setPhoneNumbers(telephone);
         // 必填:短信签名-可在短信控制台中找到
-        request.setSignName("韩金涛");
+        request.setSignName("yourSignName");
         // 必填:短信模板-可在短信控制台中找到
 //        request.setTemplateCode("SMS_142383995");
         request.setTemplateCode("yourTemplateCode");
@@ -154,9 +154,7 @@ public class SmsUtil {
 
     public static void main(String[] args) throws ClientException, InterruptedException {
         //发短信
-//        SendSmsResponse response = sendSms("13429891756", "129529");
-//        SendSmsResponse response = sms("13429891756","", "","");
-        SendSmsResponse response = sms("sendMobile","武汉");
+        SendSmsResponse response = sms("mobile","武汉");
 
         System.out.println("短信接口返回的数据----------------");
         System.out.println("Code=" + response.getCode());
