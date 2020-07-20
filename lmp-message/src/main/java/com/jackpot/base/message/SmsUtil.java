@@ -32,8 +32,8 @@ public class SmsUtil {
     static final String domain = "dysmsapi.aliyuncs.com";
 
     // TODO 此处需要替换成开发者自己的AK(在阿里云访问控制台寻找)
-    static final String accessKeyId = "LTAIH5NIE4eD8EQ4";
-    static final String accessKeySecret = "ASYTA7loViLL4ATorkcnlBxJMYwW2N";
+    static final String accessKeyId = "yourAccessKeyId";
+    static final String accessKeySecret = "yourAccessKeySecret";
 
     public static SendSmsResponse sendSms(String telephone, String checkCode) {
 
@@ -58,7 +58,7 @@ public class SmsUtil {
         // 必填:短信签名-可在短信控制台中找到
         request.setSignName("韩金涛");
         // 必填:短信模板-可在短信控制台中找到
-        request.setTemplateCode("SMS_76455085");
+        request.setTemplateCode("yourTemplateCode");
         // 可选:模板中的变量替换JSON串,如模板内容为"亲爱的${name},您的验证码为${code}"时,此处的值为
         request.setTemplateParam("{\"name\":" + telephone + ", \"code\":" + checkCode + "}");
 
@@ -101,7 +101,7 @@ public class SmsUtil {
         request.setSignName("韩金涛");
         // 必填:短信模板-可在短信控制台中找到
 //        request.setTemplateCode("SMS_142383995");
-        request.setTemplateCode("SMS_142620470");
+        request.setTemplateCode("yourTemplateCode");
 
         // 可选:模板中的变量替换JSON串,如模板内容为"亲爱的${name},您的验证码为${code}"时,此处的值为
 //        request.setTemplateParam("{\"telephone\":" + telephone + ", \"name\":" + name +", \"from\":"+from +", \"to\":"+to+"}");
@@ -135,7 +135,7 @@ public class SmsUtil {
         //组装请求对象
         QuerySendDetailsRequest request = new QuerySendDetailsRequest();
         //必填-号码
-        request.setPhoneNumber("13429891756");
+        request.setPhoneNumber("sendPhoneNumber");
         //可选-流水号
         request.setBizId(bizId);
         //必填-发送日期 支持30天内记录查询，格式yyyyMMdd
@@ -156,7 +156,7 @@ public class SmsUtil {
         //发短信
 //        SendSmsResponse response = sendSms("13429891756", "129529");
 //        SendSmsResponse response = sms("13429891756","", "","");
-        SendSmsResponse response = sms("17671755129","武汉");
+        SendSmsResponse response = sms("sendMobile","武汉");
 
         System.out.println("短信接口返回的数据----------------");
         System.out.println("Code=" + response.getCode());
